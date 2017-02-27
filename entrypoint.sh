@@ -1,3 +1,4 @@
 #!/bin/bash
-
-node /opt/fusor-guestbook/main.js
+PROJECT=/opt/fusor-guestbook
+cd $PROJECT
+node main.js
