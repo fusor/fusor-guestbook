@@ -17,6 +17,9 @@
   },
   "homepage": "https://github.com/fusor/fusor-guestbook#readme",
   "dependencies": {
-    "express": "^4.14.1"
+    "body-parser": "^1.16.1",
+    "express": "^4.14.1",
+    "express-handlebars": "^3.0.0",
+    "monk": "^4.0.0"
   }
 }

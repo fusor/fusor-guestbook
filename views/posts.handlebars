@@ -1,0 +1,17 @@
+<h1>POSTS</h1>
+<h2><a href="/posts/new">New Post</a></h2>
+<br/>
+
+{{#each posts as |post|}}
+  <h2>id: {{post._id}} </h2>
+  <p>User: {{post.user}} </p>
+  <p>Message: {{post.msg}} </p>
+  <button
+    class="btn btn-danger delete-post"
+    style="cursor: pointer"
+    data-post-id="{{post._id}}"
+  >
+    Delete
+  </button>
+  <hr/>
+{{/each}}
