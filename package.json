@@ -1,6 +1,6 @@
 {
   "name": "fusor-guestbook",
-  "version": "1.0.0",
+  "version": "v0.1.0",
   "description": "A mongo-backed guestbook",
   "main": "main.js",
   "scripts": {
