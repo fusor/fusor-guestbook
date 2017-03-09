@@ -9,7 +9,7 @@ const POST_COLLECTION = "posts"
 const cxStr= mongoCx();
 if(!cxStr) {
   console.error('ERROR: Must provide mongo connection environment vars!')
-  console.error('MONGO_HOST')
+  console.error('BINDING_KEY')
   console.error('MONGO_DB')
   console.error('MONGO_USER')
   console.error('MONGO_PASS')
@@ -77,16 +77,18 @@ function postStr(obj) {
 function mongoCx() {
   const env = process.env
   const isValid =
-    env.hasOwnProperty('MONGO_HOST') &&
+    env.hasOwnProperty('BINDING_KEY') &&
     env.hasOwnProperty('MONGO_DB') &&
     env.hasOwnProperty('MONGO_USER') &&
     env.hasOwnProperty('MONGO_PASS');
 
-  const user = env['MONGO_USER']
-  const pass = env['MONGO_PASS']
-  const host = env['MONGO_HOST']
-  const port = env['MONGO_PORT']
+  const bindingKey = env['BINDING_KEY'];
+
+  const user = env['MONGO_USER'];
+  const pass = env['MONGO_PASS'];
   const db = env['MONGO_DB']
+  const host = env[bindingKey + '_SERVICE_HOST'];
+  const port = env[bindingKey + '_SERVICE_PORT'];
 
   if(!isValid) {
     return null
