@@ -86,7 +86,7 @@ function mongoCx() {
 
   const user = env['MONGO_USER'];
   const pass = env['MONGO_PASS'];
-  const db = env['MONGO_DB']
+  const db = env['MONGO_DB'];
   const host = env[bindingKey + '_SERVICE_HOST'];
   const port = env[bindingKey + '_SERVICE_PORT'];
 
@@ -95,5 +95,9 @@ function mongoCx() {
   }
 
   const cxStr = `mongodb://${user}:${pass}@${host}:${port}/${db}`;
+
+  console.log("Connecting to mongo instance:");
+  console.log(cxStr);
+
   return cxStr;
 }
